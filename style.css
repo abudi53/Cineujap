@@ -8,10 +8,11 @@ html, body {
 }
 
 nav {
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     background-color: antiquewhite;
+    font-weight: 900;
+    padding: 0 10px;
 
 }
 
@@ -22,3 +23,21 @@ nav ul {
 
 }
 
+.logo {
+    font-size: 2rem;
+}
+
+main {
+    height: 70vh;
+    display: flex;
+}
+
+.butacas {
+    border: 1px solid black;
+    display: flex;
+    flex: 1;
+}
+
+.infoButacas {
+    flex: 1;
+}
