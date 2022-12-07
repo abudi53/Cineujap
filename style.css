@@ -8,6 +8,7 @@ html, body {
 }
 
 nav {
+    color: rgb(88, 10, 10);
     display: flex;
     justify-content: space-between;
     background-color: antiquewhite;
@@ -30,14 +31,25 @@ nav ul {
 main {
     height: 70vh;
     display: flex;
+    margin: 10vh 10vw;
 }
 
 .butacas {
-    border: 1px solid black;
     display: flex;
     flex: 1;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.butaca {
+    flex: 1;
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    color: blue;
 }
 
 .infoButacas {
     flex: 1;
 }
+
