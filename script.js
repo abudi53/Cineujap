@@ -15,9 +15,6 @@ function crearButacas(fil, col) {
     });
 }
 
-function seleccion() {
-    
-}
 crearButacas(7, 5);
 
 let cols = Array.from(document.querySelectorAll(".col"));
@@ -39,20 +36,29 @@ for (let i = 0; i < cols.length; i++) {
         cols[i].id = "G" + (i-29);
     }
 }
-
+let seleccion = [];
+let textSeleccion = document.querySelector(".seleccion");
 const imgs = Array.from(document.querySelectorAll(".imgButaca"));
-let ocupados = ["B2", "B3", "B4","C2", "C3", "C4","D2", "D3", "D4",]
+let ocupados = ["B2", "B3", "B4","C2", "C3", "C4","D2", "D3", "D4",];
 
 imgs.forEach(img => {
-    img.src = "assets/seat-theater-svgrepo-greencom.svg"
+    img.src = "assets/seat-theater-svgrepo-greencom.svg";
     if (ocupados.indexOf(img.parentElement.id) != -1) {
-        img.src = "assets/seat-theater-svgrepo-com.svg"   
+        img.src = "assets/seat-theater-svgrepo-com.svg"; 
     }
     img.addEventListener("click", (e) => {
+        if (seleccion.indexOf(img.parentElement.id) == -1) {
+            seleccion += img.parentElement.id + ", ";
+            textSeleccion.textContent = seleccion;
+
+        }
+
         if (img.getAttribute("src") === "assets/seat-theater-svgrepo-bluecom (1).svg") {
             img.src = "assets/seat-theater-svgrepo-greencom.svg"
-        }else{
+        }else if (img.getAttribute("src") === "assets/seat-theater-svgrepo-greencom.svg"){
             img.src = "assets/seat-theater-svgrepo-bluecom (1).svg"
         }
     })
 });
+
+
