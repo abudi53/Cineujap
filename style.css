@@ -1,46 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(88, 10, 10);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #580a0a;
+    font-family: "Roboto";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
 nav {
-    color: rgb(88, 10, 10);
+    color: #580a0a;
     display: flex;
     justify-content: space-between;
     background-color: antiquewhite;
     font-weight: 900;
     padding: 0 10px;
-
 }
-
 nav ul {
     display: flex;
     list-style: none;
     gap: 1rem;
-
 }
-
 .logo {
     font-size: 2rem;
 }
-
 main {
     height: 70vh;
     display: flex;
     margin: 10vh 10vw;
 }
-
 .butacas {
     display: flex;
     flex: 1;
     flex-direction: column;
     padding-right: 15vw;
 }
-
 .butaca {
     flex: 1;
     display: flex;
@@ -48,20 +44,153 @@ main {
     min-height: 0;
     color: blue;
 }
-
 .infoButacas {
     flex: 1;
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.719);
-    box-shadow: 4px 3px 8px 1px #000000;
-  	-webkit-box-shadow: 4px 3px 8px 1px #000000;
+    box-shadow: 4px 3px 8px 1px #000;
+    -webkit-box-shadow: 4px 3px 8px 1px #000;
     overflow: auto;
+    justify-content: space-between;
+    padding: 5px 15px;
 }
-
 .seleccion {
-    height: 4rem;
+    height: 30%;
     font-size: 2rem;
     font-weight: 900;
     color: antiquewhite;
 }
+.infoConsumidor {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* INPUT Y LABELS */
+
+div.omrs-input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 20.4375rem;
+  }
+  
+  /* Input*/
+  .omrs-input-underlined > input,
+  .omrs-input-filled > input {
+      border: none;
+      border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+      width: 95%;
+      height: 2rem;
+      font-size: 1.0625rem;
+      padding-left: 0.875rem;
+      line-height: 147.6%;
+      padding-top: 0.825rem;
+      padding-bottom: 0.5rem;
+      background-color: #000;
+      color: antiquewhite;
+  }
+  
+  .omrs-input-underlined > input:focus,
+  .omrs-input-filled > input:focus {
+      outline: none;
+  }
+  
+  .omrs-input-underlined > .omrs-input-label,
+  .omrs-input-filled > .omrs-input-label {
+      position: absolute;
+      top: 0.9375rem;
+      left: 0.875rem;
+      line-height: 147.6%;
+      color: antiquewhite;
+      transition: top .2s;
+  }
+  
+  .omrs-input-underlined > svg,
+  .omrs-input-filled > svg {
+      position: absolute;
+      top: 0.9375rem;
+      right: 0.875rem;
+      fill: antiquewhite;
+  }
+  
+  .omrs-input-underlined > .omrs-input-helper,
+  .omrs-input-filled > .omrs-input-helper {
+      font-size: 0.9375rem;
+      color: antiquewhite;
+      letter-spacing: 0.0275rem;
+      margin: 0.125rem 0.875rem;
+  }
+  
+  .omrs-input-underlined > input:hover,
+  .omrs-input-filled > input:hover {
+      background: rgba(0, 0, 0, 0.589);
+      border-color: var(--omrs-color-ink-high-contrast);
+      color: antiquewhite;
+  }
+  
+  .omrs-input-underlined > input:focus + .omrs-input-label,
+  .omrs-input-underlined > input:valid + .omrs-input-label,
+  .omrs-input-filled > input:focus + .omrs-input-label,
+  .omrs-input-filled > input:valid + .omrs-input-label {
+      top: 0;
+      font-size: 0.9375rem;
+      margin-bottom: 32px;;
+  }
+  
+/* FIN INPUT Y LABELS */
+
+/* BOTON */
+  .comprar {
+    box-shadow: inset 0 0 0 4px #580a0a;;
+    color: #580a0a;;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+}
+.comprar::before, .comprar::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+.comprar::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+.comprar::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+.comprar:hover {
+    color: #ffe593;
+}
+.comprar:hover::before, .comprar:hover::after {
+    border-color: #ffe593;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+.comprar:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+}
+.comprar:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+}
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem 'Roboto Slab', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+}
+.btn:focus {
+    outline: 2px dotted #55d7dc;
+}
+/* FIN BOTON */
