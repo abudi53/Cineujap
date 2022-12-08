@@ -60,4 +60,31 @@ imgs.forEach(img => {
     })
 });
 
+const boton = document.querySelector(".comprar")
+const nombre = document.querySelector("#nombre")
+const cedula = document.querySelector("#cedula")
+const telefono = document.querySelector("#telefono")
+const factnom = document.querySelector("#facturaNombre")
+const factced = document.querySelector("#facturaCedula")
+const facttlf = document.querySelector("#facturaTlf")
+const factas = document.querySelector("#facturaAsientos")
+
+const oldn = factnom.textContent
+const oldc = factced.textContent
+const oldt = facttlf.textContent
+const oldf = factas.textContent
+boton.addEventListener("click", (e) => {
+    factnom.textContent = oldn
+    factced.textContent = oldc
+    facttlf.textContent = oldt
+    factas.textContent = oldf
+    if (nombre.value && cedula.value && telefono.value && seleccion.length !== 0) {
+        factnom.textContent += nombre.value
+        factced.textContent += cedula.value
+        facttlf.textContent += telefono.value
+        factas.textContent += seleccion
+        
+    }
+})
+
 
