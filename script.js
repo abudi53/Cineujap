@@ -40,11 +40,19 @@ for (let i = 0; i < cols.length; i++) {
     }
 }
 
-imgs = Array.from(document.querySelectorAll(".imgButaca"));
+const imgs = Array.from(document.querySelectorAll(".imgButaca"));
+let ocupados = ["B2", "B3", "B4","C2", "C3", "C4","D2", "D3", "D4",]
 
 imgs.forEach(img => {
-    img.src = "assets/seat-theater-svgrepo-com.svg"
+    img.src = "assets/seat-theater-svgrepo-greencom.svg"
+    if (ocupados.indexOf(img.parentElement.id) != -1) {
+        img.src = "assets/seat-theater-svgrepo-com.svg"   
+    }
     img.addEventListener("click", (e) => {
-        img.classList.add("click")
+        if (img.getAttribute("src") === "assets/seat-theater-svgrepo-bluecom (1).svg") {
+            img.src = "assets/seat-theater-svgrepo-greencom.svg"
+        }else{
+            img.src = "assets/seat-theater-svgrepo-bluecom (1).svg"
+        }
     })
 });
